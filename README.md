@@ -98,7 +98,7 @@ A well written README file can enhance your project and portfolio.  Develop your
 
 # Demo
 
-![PID controlled car](video/pid.mp4)
+![PID controlled car](video/pid-short-compressed.gif)
 
 ## How is a PID controller working?
 
@@ -110,7 +110,7 @@ In this project we use a PID controller to controll the steering angle of the ca
 
 **D** - The differential part of the PID controller. This component acts based on the differential of (cte - prev_cte). Without this part or when only using the P component the car never reaches a stable state around the centerline but oscillates around it. In the simulation case the car even never gets into a "stable" oscillating state but starts to overshoot more and more. It therefore smoothes the output of the controller and lowers the steering angle when the car gets closer to the centerline. It therefore smoothes the car's trajectory.
 
-## How are the parameter tuned?
+## How are parameters tuned?
 
 The paramters are only tweaked by hand. I started with increasing the P parameter while keaping I and D to 0.0. With only a P-controller the car can stay on track only for a little while until it starts to overshoot the centerline pretty heavily. I increased the P part up to 0.5. After that I started increase D. After adding D the car can stay on track pretty well. Just by visual inspecting the car drove the smoothest with a D-value of 4.0. Increasing this value more and more leads to a car which stays more closer to centerline, but with the downside of being very slow since the steering angle toggles in every step between two large values. In the end I also added a very small I-value of 0.002. Visually I could not see any improvements but this factor should counteract any longterm drifts of the car.
 
